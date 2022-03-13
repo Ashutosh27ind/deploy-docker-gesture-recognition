@@ -24,4 +24,4 @@ The steps followed to deploy the model using docker are:
 The training data consists of a few hundred videos categorised into one of the five classes. Each video (typically 2-3 seconds long) is divided into a sequence of 30 frames(images). These videos have been recorded by various people performing one of the five gestures in front of a webcam - similar to what the smart TV will use.  
 The videos have two types of dimensions - either 360x360 or 120x160 (depending on the webcam used to record the videos). 
 
-### **please refer the files commands.txt for deployment on docker and kubernate
+### **please refer the files commands.txt for deployment on docker and kubernate**
