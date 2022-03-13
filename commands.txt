@@ -1,0 +1,41 @@
+Steps to Deploy ML Models on Docker
+
+1. Build a Docker :  sudo docker build -t gr_deploy:test .
+2. Run a Docker : sudo docker run -d -p 80:5000 gr_deploy:test
+   ## 80 : local
+   ## 5000 : inside container
+3. Check if port is free : netstat -nultp
+4. Docker logs : sudo docker logs 2f22d6945655
+5. Enter a Docker  : sudo docker exec -it 970987e98ece  bash
+6. Delete all docker images and containers : sudo docker system prune -a
+7. Deleting a Docker Container : sudo docker container rm cc3f2ff51cab cd20b396a061
+8. Stop a Running Docker Container :sudo docker container stop f9142795b2ce ffda66ea92f1
+
+Steps to Deploy on Kubernetes
+1. Tag Image : gcr.io/project-id/image-name:tag
+   sudo docker tag gr_deploy:v1 gcr.io/project-id/image-name:tag
+2. Push the docker image to registry. Registry stores docker image
+   sudo docker push gcr.io/project-id/image-name:tag
+3. Update the pushed image-name in yaml file
+4. Create GKE Cluster
+5. Install kubectl
+   Link: https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-linux
+6. Go to cluster. Click connect. Copy command and run in local
+7. sudo kubectl get nodes
+   To validate connection with cluster
+8. kubectl apply -f kubernetes.yaml
+9. Verify deployment pods and services on cluster
+   kubectl get pods, svc
+10. For accessing the URL, create proxy
+    Go to GKE console
+    Go to Service and Ingress.
+    Click on Service.
+    Scroll Down. Go to Ports. Click Port Forwarding.
+    Copy the command and execute in local.
+
+
+
+
+
+
+

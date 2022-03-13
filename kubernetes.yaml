@@ -1,0 +1,37 @@
+# Creating pods
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-gr
+spec:
+  selector:
+    matchLabels:
+      run: deploy-gr
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: deploy-gr
+    spec:
+      containers:
+      - name: deploy-gr
+        image: gcr.io/learned-raceway-277307/gr-deploy:v1
+        ports:
+        - containerPort: 5000
+
+
+---
+# Creating service for exposing the pods
+apiVersion: v1
+kind: Service
+metadata:
+  name: deploy-gr
+  labels:
+    run: deploy-gr
+spec:
+  ports:
+  - port: 80
+    targetPort: 5000
+    protocol: TCP
+  selector:
+    run: deploy-gr
