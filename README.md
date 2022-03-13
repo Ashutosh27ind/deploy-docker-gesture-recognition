@@ -1,7 +1,7 @@
 # deploy-docker-gesture-recognition  
 We aim to deploy gesture recognition model on docker with Flask. The model here is 3D Neural Network to correctly recognize hand gestures by a user.   
   
-![alt text](https://github.com/Ashutosh27ind/ML_Model_Deployment_Flask/blob/main/gr_docker.PNG?raw=true)  
+![alt text](https://github.com/Ashutosh27ind/deploy-docker-gesture-recognition/blob/main/gr_docker.PNG?raw=true)  
   
 ### Some terminlogies :  
    *Docker container*: Docker is like a container where the code is loaded so that it can be used on any platform without any dependency.  
